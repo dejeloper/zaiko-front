@@ -6,9 +6,10 @@ import { Header } from './App/header';
 
 interface AppLayoutProps {
   children: React.ReactNode;
+  title?: string;
 }
 
-export const AppLayout = ({ children }: AppLayoutProps) => {
+export const AppLayout = ({ children, title = 'Zaiko' }: AppLayoutProps) => {
 
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
@@ -17,6 +18,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
       </Head>
       <div className="flex h-screen overflow-hidden">
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
