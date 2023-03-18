@@ -2,7 +2,7 @@ import { AppLayout } from "@/components/Layouts"
 
 const Customers = () => {
   return (
-    <AppLayout>
+    <AppLayout title="Zaiko - Clientes">
       <h1 className="text-3xl font-bold underline">
         Customers
       </h1>

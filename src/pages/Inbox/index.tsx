@@ -2,9 +2,9 @@ import { AppLayout } from '@/components/Layouts'
 
 const Inbox = () => {
   return (
-    <AppLayout>
+    <AppLayout title="Zaiko - Bandeja de Entrada">
       <h1 className="text-3xl font-bold underline">
-        Inbox 2
+        Inbox
       </h1>
     </AppLayout>
   )

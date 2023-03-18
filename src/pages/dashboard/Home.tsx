@@ -3,8 +3,8 @@ import { WelcomeBanner } from "@/components/dashboard";
 
 const Home = () => {
   return (
-    <AppLayout>
-      <WelcomeBanner title="Bienvenido" subtitle="Este es Saiko" />
+    <AppLayout title="Zaiko - Inicio">
+      <WelcomeBanner title="Bienvenido a Zaiko" subtitle="La plataforma que necesitaba para digitalizar su negocio" />
       <h1 className="text-3xl font-bold underline">
         Home
       </h1>
