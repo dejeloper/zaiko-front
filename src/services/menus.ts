@@ -26,7 +26,7 @@ export const menuSidebar = [
     'pathname': 'inbox',
     'name': 'Inbox',
     'icon': 'ri-mail-line',
-    'url': '/Inbox'
+    'url': '/Inbox/'
   },
   {
     'pathname': 'settings',
