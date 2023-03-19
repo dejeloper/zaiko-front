@@ -7,9 +7,11 @@ import { Header } from './App/header';
 interface AppLayoutProps {
   children: React.ReactNode;
   title?: string;
+  pageDescription?: string;
+  imageFullUrl?: string;
 }
 
-export const AppLayout = ({ children, title = 'Zaiko' }: AppLayoutProps) => {
+export const AppLayout = ({ children, title = 'Zaiko', pageDescription = 'Proyecto Zaiko', imageFullUrl }: AppLayoutProps) => {
 
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
@@ -19,6 +21,15 @@ export const AppLayout = ({ children, title = 'Zaiko' }: AppLayoutProps) => {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="og:title" content={title} />
+        <meta name="og:description" content={pageDescription} />
+        {
+          imageFullUrl && (
+            <meta name="og:image" content={imageFullUrl} />
+          )
+        }
+
       </Head>
       <div className="flex h-screen overflow-hidden">
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
