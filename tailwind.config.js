@@ -7,6 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        black: '#000',
+        white: '#fff',
+        primary: '#8b5cf6',
+        secundary: 'rgba(241, 245, 249)',
+        title: '#312e81'
+      },
       boxShadow: {
         DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.02)',
         md: '0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
@@ -18,6 +25,9 @@ module.exports = {
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        rubik: ['Rubik', 'sans-serif']
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1.5' }],
@@ -33,6 +43,10 @@ module.exports = {
       },
       screens: {
         xs: '480px',
+        sm: '768px',
+        md: '1024px',
+        lg: '1366px',
+        xl: '1600px'
       },
       borderWidth: {
         3: '3px',
