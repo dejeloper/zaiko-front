@@ -57,7 +57,7 @@ const Login = () => {
           </div>
         </section>
       </div>
-      <div className="sm:w-1/2 flex items-center justify-center bg-primary_hover">
+      <div className="hidden sm:w-1/2 sm:flex items-center justify-center bg-indigo-400">
         <div className="max-w-xs transform duration-200 hover:scale-110 cursor-pointer">
           <Image src={welcomeImage} alt='Welcome Photo' width={500} height={500} />
         </div>
