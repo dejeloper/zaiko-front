@@ -135,7 +135,7 @@ export const Sidebar: FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
               {
                 menuItems.map((item, index) => {
                   const path = pathname === "/" ? 'dashboard/home' : pathname.toLowerCase();
-                  console.log(item)
+
                   return (
                     <SidebarLinkGroup key={item.name} activecondition={path.includes(item.pathname)}>
                       {(handleClick, open) => {
