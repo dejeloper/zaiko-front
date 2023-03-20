@@ -11,6 +11,7 @@ module.exports = {
         black: '#000',
         white: '#fff',
         primary: '#8b5cf6',
+        primary_hover: '#7c3aed',
         secundary: 'rgba(241, 245, 249)',
         title: '#312e81'
       },
@@ -69,7 +70,10 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/forms')({
+      strategy: 'base', // only generate global styles
+      strategy: 'class', // only generate classes
+    }),
     plugin(({ addVariant, e }) => {
       addVariant('sidebar-expanded', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => `.sidebar-expanded .${e(`sidebar-expanded${separator}${className}`)}`);
