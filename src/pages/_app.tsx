@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router';
 import '@/styles/globals.css'
 
+import "reflect-metadata"
+
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     if (localStorage.getItem('sidebar-expanded') == 'true') {
