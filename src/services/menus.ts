@@ -34,6 +34,7 @@ export const menuSidebar = [
     'icon': 'ri-settings-3-line',
     'items': [
       { 'name': 'Parámetros', 'url': '/settings/Parameters' },
+      { 'name': 'Usuarios', 'url': '/settings/Users' },
       { 'name': 'Listas', 'url': '/settings/List' },
       { 'name': 'Colores', 'url': '/settings/Colors' },
     ]
