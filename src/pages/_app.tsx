@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router';
+import { SWRConfig } from 'swr'
 import '@/styles/globals.css'
 
 import "reflect-metadata"
@@ -26,7 +27,11 @@ const App = ({ Component, pageProps }: AppProps) => {
     }
   }, [pathname]);
 
-  return <Component {...pageProps} />
+  return (
+    <SWRConfig value={{ fetcher: (resource, init) => fetch(resource, init).then(res => res.json()) }}>
+      <Component {...pageProps} />
+    </SWRConfig>
+  )
 }
 
 export default App;
