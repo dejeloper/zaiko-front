@@ -3,5 +3,5 @@ export interface IApiResponse {
   message: string;
   code: number;
   count?: number;
-  data: {};
+  data: [];
 }

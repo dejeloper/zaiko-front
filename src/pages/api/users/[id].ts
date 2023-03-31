@@ -8,7 +8,7 @@ let responseError: IApiResponse = {
   code: 403,
   message: "Error: La petición es incorrecta. (Bad Request)",
   count: 0,
-  data: {},
+  data: [],
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

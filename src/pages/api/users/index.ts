@@ -8,7 +8,7 @@ let responseError: IApiResponse = {
   code: 403,
   message: "Error: La petición es incorrecta. (Bad Request)",
   count: 0,
-  data: {},
+  data: [],
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -50,7 +50,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<IApiResponse>) =
 
 const getAllUsers = async (): Promise<IApiResponse> => {
 
-  const query = `SELECT * FROM v_users_all`;
+  const query = `SELECT * FROM v_users_all ORDER BY id`;
 
   try {
     const { rows } = await conn.query(query);
@@ -71,7 +71,7 @@ const getAllUsers = async (): Promise<IApiResponse> => {
       code: 403,
       message: `Error: ${error.detail}`,
       count: 0,
-      data: {},
+      data: [],
     }
 
     return response;
@@ -94,7 +94,7 @@ const insertOne = async (body: IUser): Promise<IApiResponse> => {
         code: 403,
         message: 'Error: No se pudo guardar los datos de contacto del usuario, intentelo nuevamente',
         count: 0,
-        data: {},
+        data: [],
       };
     }
 
@@ -112,7 +112,7 @@ const insertOne = async (body: IUser): Promise<IApiResponse> => {
           code: 403,
           message: `Error: No se guardó el usuario, intentelo nuevamente`,
           count: 0,
-          data: {},
+          data: [],
         }
       }
 
@@ -129,7 +129,7 @@ const insertOne = async (body: IUser): Promise<IApiResponse> => {
         code: 403,
         message: `Error: ${error.detail}`,
         count: 0,
-        data: {},
+        data: [],
       }
     }
 
@@ -139,7 +139,7 @@ const insertOne = async (body: IUser): Promise<IApiResponse> => {
       code: 403,
       message: `Error: ${error.detail}`,
       count: 0,
-      data: {},
+      data: [],
     }
   }
 }
