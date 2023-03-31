@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router';
 import { SWRConfig } from 'swr'
+import { ThemeProvider } from 'next-themes'
 import '@/styles/globals.css'
 
 import "reflect-metadata"
@@ -29,7 +30,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <SWRConfig value={{ fetcher: (resource, init) => fetch(resource, init).then(res => res.json()) }}>
-      <Component {...pageProps} />
+      <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
     </SWRConfig>
   )
 }
