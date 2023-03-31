@@ -10,3 +10,9 @@
 @import "additional-styles/theme.css";
 
 @tailwind utilities;
+
+@layer utilities {
+  .badge {
+    @apply inline-block px-2 py-1 text-xs font-bold leading-none text-center shadow-none rounded transition duration-150 ease-in-out;
+  }
+}
