@@ -54,7 +54,7 @@ export const WelcomeBanner: FC<Props> = ({ title, subtitle }) => {
       {/* Content */}
       <div className="relative">
         <h1 className="text-2xl md:text-3xl text-slate-800 font-bold mb-1">{title}</h1>
-        <p>{subtitle}</p>
+        <p className="text-slate-600 dark:text-slate-700">{subtitle}</p>
       </div>
 
     </div>
