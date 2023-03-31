@@ -12,15 +12,24 @@ const Users = () => {
         </header>
         <div className="p-3">
           {
-            isLoading || !data
-              ?
-              <p className="w-full bg-dark p-2 text-center text-white text-bold">
-                No hay Información
-              </p>
-              : <>
-                <TableUser users={data} />
-                <CardsUser users={data} />
-              </>
+            isLoading
+              ? (
+                <p className="w-full bg-dark p-2 text-center text-white text-bold">
+                  Cargando información...
+                </p>
+              )
+              : !data
+                ? (
+                  <p className="w-full bg-dark p-2 text-center text-white text-bold">
+                    No hay Información
+                  </p>
+                )
+                : (
+                  <>
+                    <TableUser users={data} />
+                    <CardsUser users={data} />
+                  </>
+                )
           }
         </div>
       </div >
