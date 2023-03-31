@@ -1,15 +1,15 @@
-import { AppLayout } from "@/components/Layouts";
+import { AppLayout } from "@/components/Layouts"
 import { WelcomeBanner } from "@/components/dashboard";
 
-const Index = () => {
+const Home = () => {
   return (
-    <AppLayout>
+    <AppLayout title="Zaiko - Inicio">
       <WelcomeBanner title="Bienvenido a Zaiko" subtitle="La plataforma que necesitaba para digitalizar su negocio" />
       <h1 className="text-3xl font-bold underline">
-        Inicio
+        Home
       </h1>
     </AppLayout>
-  );
+  )
 }
 
-export default Index;
+export default Home;
