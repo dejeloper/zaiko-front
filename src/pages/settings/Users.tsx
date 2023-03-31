@@ -19,11 +19,17 @@ const Users = () => {
                 </p>
               )
               : !data
-                ? (
-                  <p className="w-full bg-dark p-2 text-center text-white text-bold">
-                    No hay Información
-                  </p>
-                )
+                ? error
+                  ? (
+                    <p className="w-full bg-dark p-2 text-center text-white text-bold">
+                      Error: {error}
+                    </p>
+                  )
+                  : (
+                    <p className="w-full bg-dark p-2 text-center text-white text-bold">
+                      No hay información
+                    </p>
+                  )
                 : (
                   <>
                     <TableUser users={data} />
