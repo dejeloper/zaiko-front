@@ -1,3 +1,5 @@
+import { IUserContacts } from './';
+
 export interface IUser {
   id?: number;
   username: string;
@@ -11,17 +13,6 @@ export interface IUser {
   contacts: IUserContacts;
   change_password?: boolean;
   enabled?: boolean;
-  user_create?: string;
-  date_create?: Date;
-  user_update?: string;
-  date_update?: Date;
-}
-
-export interface IUserContacts {
-  id?: number;
-  address: string[];
-  email: string[];
-  phone: string[];
   user_create?: string;
   date_create?: Date;
   user_update?: string;
