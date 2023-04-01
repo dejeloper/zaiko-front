@@ -1,3 +1,4 @@
-export * from './TableUser';
-export * from './CardsUser';
-export * from './BadgeState';
+export * from './Users/Table';
+export * from './Users/Cards';
+export * from './Users/Card';
+export * from './Users/BadgeState';

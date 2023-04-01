@@ -1,20 +1,20 @@
 import { FC } from "react";
 import { IApiResponse } from "@/interfaces/api";
-import { IUserResponse } from '../../interfaces/users/';
-import { BadgeState } from "./";
+import { IUserResponse } from '@/interfaces/users/';
+import { BadgeState } from '@/components/Content';
 
 interface Props {
   users: IApiResponse
 }
 
-export const TableUser: FC<Props> = ({ users }) => {
-  let rowClass = "bg-white";
+export const Table: FC<Props> = ({ users }) => {
+  let rowClass = "bg-white dark:bg-gray-400 dark:text-slate-700";
   const { data: listUser, count = 0 } = users;
 
   return (
-    <div className="overflow-x-auto rounded-lg shadow hidden md:block">
+    <div className="overflow-x-auto rounded-lg shadow hidden md:block bg-slate-100 text-slate-700 dark:bg-slate-900 dark:text-slate-300">
       <table className="w-full">
-        <thead className='bg-gray-50 border-b-2 border-gray-200'>
+        <thead className='border-b border-gray-200'>
           <tr>
             <th className='p-3 text-sm font-semibold tracking-wide text-left whitespace-nowrap'>Usuario</th>
             <th className='p-3 text-sm font-semibold tracking-wide text-left whitespace-nowrap'>Nombre</th>
@@ -30,26 +30,26 @@ export const TableUser: FC<Props> = ({ users }) => {
               ? (
                 listUser.map((user: IUserResponse) => {
                   const { id, username, name, lastname, user_state, user_role, phone } = user;
-                  rowClass = (rowClass === 'bg-gray-100') ? 'bg-white' : 'bg-gray-100';
+                  rowClass = (rowClass === 'bg-gray-100 dark:bg-gray-700') ? 'bg-white dark:bg-gray-400 dark:text-slate-700' : 'bg-gray-100 dark:bg-gray-700';
 
                   return (
                     <tr key={id} className={rowClass}>
-                      <td className='p-3 text-sm text-gray-700'>
-                        <span>{username}</span>
+                      <td className='p-3 text-sm'>
+                        <span className='p-1.5 text-xs font-medium uppercase tracking-wider'>{username}</span>
                       </td>
-                      <td className='p-3 text-sm text-gray-700'>
-                        <span>{name}  {lastname}</span>
+                      <td className='p-3 text-sm'>
+                        <span className='p-1.5 text-xs font-medium uppercase tracking-wider'>{name}  {lastname}</span>
                       </td>
-                      <td className='p-3 text-sm text-gray-700'>
+                      <td className='p-3 text-sm'>
                         <span className='p-1.5 text-xs font-medium uppercase tracking-wider'>{user_role}</span>
                       </td>
                       <td className='p-3 text-sm'>
                         <BadgeState state={user_state} />
                       </td>
-                      <td className='p-3 text-sm text-gray-700'>
+                      <td className='p-3 text-sm'>
                         <span className='p-1.5 text-xs font-medium uppercase tracking-wider'>{phone[0]}</span>
                       </td>
-                      <td className='p-3 text-sm text-gray-700'>
+                      <td className='p-3 text-sm'>
                         <div>Opciones</div>
                       </td>
                     </tr>
