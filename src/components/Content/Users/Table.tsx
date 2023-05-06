@@ -35,19 +35,19 @@ export const Table: FC<Props> = ({ users }) => {
                   return (
                     <tr key={id} className={rowClass}>
                       <td className='p-3 text-sm'>
-                        <span className='p-1.5 text-xs font-medium uppercase tracking-wider'>{username}</span>
+                        <span className='p-1.5 text-xs font-medium tracking-wider'>{username}</span>
                       </td>
                       <td className='p-3 text-sm'>
-                        <span className='p-1.5 text-xs font-medium uppercase tracking-wider'>{name}  {lastname}</span>
+                        <span className='p-1.5 text-xs font-medium tracking-wider'>{name}  {lastname}</span>
                       </td>
                       <td className='p-3 text-sm'>
-                        <span className='p-1.5 text-xs font-medium uppercase tracking-wider'>{user_role}</span>
+                        <span className='p-1.5 text-xs font-medium tracking-wider'>{user_role}</span>
                       </td>
                       <td className='p-3 text-sm'>
                         <BadgeState state={user_state} />
                       </td>
                       <td className='p-3 text-sm'>
-                        <span className='p-1.5 text-xs font-medium uppercase tracking-wider'>{phone[0]}</span>
+                        <span className='p-1.5 text-xs font-medium tracking-wider'>{phone[0]}</span>
                       </td>
                       <td className='p-3 text-sm'>
                         <div>Opciones</div>
