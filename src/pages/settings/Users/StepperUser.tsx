@@ -60,3 +60,5 @@ const StepperUser = () => {
     </AppLayout>
   );
 }
+
+export default StepperUser;
