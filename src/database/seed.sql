@@ -110,6 +110,7 @@ INSERT INTO public.user_contacts ("address", "email", "phone") values
 ('["Calle 123",  "Avenida Grande 34"]', '["demo@zaiko.com", "contacto@zaiko.com"]', '["3001234000", "3101239999"]'),
 ('["Calle 123",  "Avenida Grande 34"]', '["demo@zaiko.com", "contacto@zaiko.com"]', '["3001234000", "3101239999"]'); 
 
+-- truncate table public.users restart identity
 INSERT INTO public.users ("username", "password", "name", "lastname", "number_document", "type_document_id", "state_id", "rol_id", "contacts_id") VALUES
 ('Admin1', '11111111', 'Jhonatan', 'Guerrero', '11111111', 1, 1, 1, 1),
 ('Admin2', '22222222', 'Camilo', 'Murcia', '22222222', 1, 1, 1, 2),
