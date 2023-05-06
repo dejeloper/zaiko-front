@@ -80,7 +80,7 @@ const getAllUsers = async (): Promise<IApiResponse> => {
 
 const insertOne = async (body: IUser): Promise<IApiResponse> => {
   const { username, password, name, lastname, number_document, type_document_id, state_id, rol_id, contacts } = body;
-  const { address, email, phone } = contacts;
+  const { address, email, phone } = contacts || {};
 
   const queryContacts = `INSERT INTO public.user_contacts ("address", "email", "phone") values ($1, $2, $3) RETURNING id`;
   const valuesContacts = [JSON.stringify(address), JSON.stringify(email), JSON.stringify(phone)];
