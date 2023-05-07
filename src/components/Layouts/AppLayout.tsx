@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { Toaster } from 'react-hot-toast';
 
 import { Sidebar } from './App/sidebar';
 import { Header } from './App/header';
+import { Breadcrumb } from '../ui';
 
 interface AppLayoutProps {
   children: React.ReactNode;
   title?: string;
   pageDescription?: string;
   imageFullUrl?: string;
+  titlePage?: string;
 }
 
-export const AppLayout = ({ children, title = 'Zaiko', pageDescription = 'Proyecto Zaiko', imageFullUrl }: AppLayoutProps) => {
+export const AppLayout = ({ children, title = 'Zaiko', pageDescription = 'Proyecto Zaiko', imageFullUrl, titlePage }: AppLayoutProps) => {
 
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
@@ -37,7 +40,14 @@ export const AppLayout = ({ children, title = 'Zaiko', pageDescription = 'Proyec
           <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
           <main>
             <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
-              {children}
+              <div className="col-span-full xl:col-span-6 bg-slate-100 text-slate-700 dark:bg-slate-900 dark:text-slate-300 shadow-xl rounded-sm border border-none">
+                <header className="px-5 py-4 border-b border-slate-200 dark:border-slate-800 flex justify-between">
+                  <h1 className="font-semibold text-2xl">{titlePage}</h1>
+                  <Breadcrumb />
+                </header>
+                <Toaster position="top-center" />
+                {children}
+              </div>
             </div>
           </main>
         </div>
