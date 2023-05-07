@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, FC } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { SidebarLinkGroup, SidebarMenu, SidebarMenuIndividual } from '.';
-import { menuSidebar } from '../../../../services/menus';
+import { menuSidebar } from '@/services';
 import 'remixicon/fonts/remixicon.css'
 
 interface Props {
